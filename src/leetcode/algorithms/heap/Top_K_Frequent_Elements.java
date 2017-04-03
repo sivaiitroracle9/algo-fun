@@ -17,7 +17,7 @@ public class Top_K_Frequent_Elements {
 		}
 		PriorityQueue<Node> heap = new PriorityQueue<>(map.keySet().size(), (o1, o2) -> o2.getFreq()
 				- o1.getFreq());
-		for(int n : nums)
+		for(int n : map.keySet())
 			heap.offer(new Node(n, map.get(n)));
 		List<Integer> list = new ArrayList<Integer>(k);
 		while(k-- > 0 && !heap.isEmpty())
